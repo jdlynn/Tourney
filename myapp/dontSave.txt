@@ -1,0 +1,1 @@
+cp ~/.local/share/virtualenvs/tourney2-Xvb_9dVF/lib/python3.7/site-packages/flask_user/templates/flask_user/* /Users/jimlynn/python/flask/tourney2/myapp/templates/.
