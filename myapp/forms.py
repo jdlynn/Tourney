@@ -1,10 +1,21 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, IntegerField, BooleanField, SubmitField, SelectField
 from wtforms.validators import DataRequired
 
 
-class BogusForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Remember Me')
+class CustomUserProfileForm(FlaskForm):
+    first_name = StringField('First name', validators=[DataRequired()])
+    last_name = StringField('Last name', validators=[DataRequired()])
+    phone_no = StringField('Phone No')
+    address = StringField('Street Address')
+    city = StringField('City')
+    state = StringField('State')
+    zipcode = StringField('Zip Code')
+    submit = SubmitField('Update')
+
+
+class TeamForm(FlaskForm):
+    teamname = StringField('Team Name', validators=[DataRequired()])
+    seed = IntegerField('Seed', validators=[DataRequired()])
+    region_select = SelectField('Region', coerce=int)
     submit = SubmitField('Sign In')
