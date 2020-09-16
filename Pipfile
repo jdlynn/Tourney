@@ -12,6 +12,7 @@ python-dotenv = "*"
 flask-migrate = "*"
 flask-user = "*"
 email-validator = "*"
+flask-admin = "*"
 
 [requires]
 python_version = "3.7"

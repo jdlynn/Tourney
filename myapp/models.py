@@ -45,11 +45,17 @@ class Region(db.Model):
     name = db.Column(db.String(255), nullable=False, unique=True)
     teams = db.relationship('Team', backref='region', lazy=True)
 
+    def __repr__(self):
+        return self.name
+
 
 class Team(db.Model):
     __tablename__ = 'teams'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False, unique=True)
     seed = db.Column(db.Integer, nullable=False)
-    region_id = db.Column(db.Integer, db.ForeignKey('regions.id'), nullable=False) 
-    reqion_by = db.relationship('Region', foreign_keys=[region_id], backref=db.backref('Region', lazy='dynamic'))
+    region_id = db.Column(db.Integer, db.ForeignKey('regions.id'), nullable=False)
+    
+    def __repr__(self):
+        return self.name
+        
